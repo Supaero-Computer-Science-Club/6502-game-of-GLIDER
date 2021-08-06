@@ -1,5 +1,6 @@
 # The game of Glider.
 In this small directory, one will find all the material to run and understand the project of Glider. Glider is a simple 2D game running in the 2x16 LCD monitor coming with the 6502 kit from [here](https://eater.net/6502).
+In case of any issue, please open an issue on the repo or contact as at `supaerocsclub@gmail.com`.
 
 
 ## Table Of Content.
@@ -68,7 +69,5 @@ ob1|ob2|ob3|ob4|...|   obn   |
 ```
 
 ## 3 Run the code. [[toc](https://github.com/Supaero-Computer-Science-Club/6502-game-of-GLIDER/tree/main/#table-of-content)]
-To run the code, simply run `make SRC=main.s`. This will assemble the source, show the byte-code and upload it to an eePROM through a TL866-like eePROM programmer.  
-By default, the above command will fail. This is because, by default, the makefile tries to put the byte-code inside the `bin` directory, which does not exist in the repo. One has two ways to make it work:
-- create a `bin` directory: run `mkdir bin` in the root of the repo.
-- change the output of the makefile: add `OBJ_DIR=<your_output_directory> OBJ=<your_output_file>` to the make command above.
+
+To run the code, simply run `make`. This will assemble the source, show the byte-code and upload it to an eePROM through a TL866-like eePROM programmer.

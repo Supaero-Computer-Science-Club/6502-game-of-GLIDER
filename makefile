@@ -16,8 +16,7 @@ ASMFLAGS = -Fbin -dotdir -c02
 WRITER   = minipro
 DEVICE   = AT28C256
 
-SRC = ""
-OBJ_DIR = bin
+SRC = main.s
 OBJ = a.out
 
 ##################
@@ -28,15 +27,15 @@ all: assemble hexdump write
 
 # assemble.
 assemble:
-	@echo "$(LIGHTPURPLE)$(ASM) $(ASMFLAGS) $(SRC) -o $(OBJ_DIR)/$(OBJ)$(RESET)"
-	@$(ASM) $(ASMFLAGS) $(SRC) -o $(OBJ_DIR)/$(OBJ)
+	@echo "$(LIGHTPURPLE)$(ASM) $(ASMFLAGS) $(SRC) -o $(OBJ)$(RESET)"
+	@$(ASM) $(ASMFLAGS) $(SRC) -o $(OBJ)
 
 # dump the content of the object file.
 hexdump:
-	@echo "$(LIGHTPURPLE)hexdump -C $(OBJ_DIR)/$(OBJ)$(RESET)"
-	@hexdump -C $(OBJ_DIR)/$(OBJ)
+	@echo "$(LIGHTPURPLE)hexdump -C $(OBJ)$(RESET)"
+	@hexdump -C $(OBJ)
 
 # write to the eePROM.
 write:
-	@echo "$(LIGHTPURPLE)$(WRITER) -p $(DEVICE) -w $(OBJ_DIR)/$(OBJ)$(RESET)"
-	@$(WRITER) -p $(DEVICE) -w $(OBJ_DIR)/$(OBJ)
+	@echo "$(LIGHTPURPLE)$(WRITER) -p $(DEVICE) -w $(OBJ)$(RESET)"
+	@$(WRITER) -p $(DEVICE) -w $(OBJ)
