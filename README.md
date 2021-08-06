@@ -1,6 +1,6 @@
 # The game of Glider.
 In this small directory, one will find all the material to run and understand the project of Glider. Glider is a simple 2D game running in the 2x16 LCD monitor coming with the 6502 kit from [here](https://eater.net/6502).  
-In case of any issue, please open an issue on the repo or contact as at `supaerocsclub@gmail.com`.
+In case of any issue, please open an issue on the repo or contact us at `supaerocsclub@gmail.com`.
 
 
 ## Table Of Content.
