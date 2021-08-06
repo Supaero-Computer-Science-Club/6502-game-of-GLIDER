@@ -12,11 +12,11 @@ In this small directory, one will find all the material to run and understand th
 ## 1 The Hardware. [[toc](https://github.com/Supaero-Computer-Science-Club/assembly/tree/main/kit-6502/glider#table-of-content)]
 The overall schematics is very similar to the original one.  
 A major additional feature is the debouncer circuit and all the buttons that are fully connected on the breadboards.  
-| ![glider-schematics.png](https://github.com/Supaero-Computer-Science-Club/assembly/blob/main/kit-6502/res/glider-schematics.png) | 
+| ![glider-schematics.png](https://github.com/Supaero-Computer-Science-Club/6502-game-of-GLIDER/blob/main/res/glider-schematics.png) | 
 |:--:| 
 | *Adaptation of the original design of Ben's 6502* |
 
-| ![glider-debouncer-schematics.png](https://github.com/Supaero-Computer-Science-Club/assembly/blob/main/kit-6502/res/glider-debouncer-schematics.png) | 
+| ![glider-debouncer-schematics.png](https://github.com/Supaero-Computer-Science-Club/6502-game-of-GLIDER/blob/main/res/glider-debouncer-schematics.png) | 
 |:--:| 
 | *The Debouncer Circuit* |
 
@@ -68,4 +68,7 @@ ob1|ob2|ob3|ob4|...|   obn   |
 ```
 
 ## 3 Run the code. [[toc](https://github.com/Supaero-Computer-Science-Club/assembly/tree/main/kit-6502/glider#table-of-content)]
-One can find ways to run the code in the main [README](https://github.com/Supaero-Computer-Science-Club/assembly/tree/main/kit-6502).
+To run the code, simply run `make SRC=main.s`. This will assemble the source, show the byte-code and upload it to an eePROM through a TL866-like eePROM programmer.  
+By default, the above command will fail. This is because, by default, the makefile tries to put the byte-code inside the `bin` directory, which does not exist in the repo. One has two ways to make it work:
+- create a `bin` directory: run `mkdir bin` in the root of the repo.
+- change the output of the makefile: add `OBJ_DIR=<your_output_directory> OBJ=<your_output_file>` to the make command above.
